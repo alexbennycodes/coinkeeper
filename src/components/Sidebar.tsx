@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import SidebarItems from "./SidebarItems";
-import { Avatar, AvatarFallback } from "./ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 import { AuthSession, getUserAuth } from "@/lib/auth/utils";
 
@@ -40,6 +40,7 @@ const UserDetails = ({ session }: { session: AuthSession }) => {
           </p>
         </div>
         <Avatar className="h-10 w-10">
+          <AvatarImage src={user?.image} alt={user.name} />
           <AvatarFallback className="border-border border-2 text-muted-foreground">
             {user.name
               ? user.name
